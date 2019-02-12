@@ -2,12 +2,13 @@ import numpy as np
 import re
 from nltk.corpus import stopwords
 
+
 nums = r'[0-9]+'
 latins = r'[A-Za-z]+'
 stop = set(stopwords.words('russian') + ['года', 'века', 'метров', 'м', 'э', 'лет', 'руб', 'млрд', 'млн', 'км', 'кг',
                                          'мм', 'сек', 'тысячи', 'ночи', 'см', 'км/ч', 'г', 'тыс', 'эры', 'минут'])
 
-with open('noun_compounds_NN.txt', 'r') as compounds_train:
+with open('noun_compounds_AN.txt', 'r') as compounds_train:
     compounds = []
     for line in compounds_train:
         if not re.match(nums, line) and not re.match(latins, line) and line.split()[0] not in stop and \
