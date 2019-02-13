@@ -5,7 +5,7 @@ morph = pymorphy2.MorphAnalyzer()
 
 if __name__ == '__main__':
     data = {'Часть 1': [], 'Часть 2': []}
-    with open('/home/willstudent/russian_compounds/compound_lists/text/compounds_top10000_AN.txt', 'r') as compounds:
+    with open('compounds_top10000_AN.txt', 'r') as compounds:
         with open('/home/willstudent/russian_compounds/compound_lists/text/compounds_top10000_AN_inflect.txt',
                   'w') as infl:
             for line in compounds:
