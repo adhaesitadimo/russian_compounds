@@ -6,7 +6,7 @@ morph = pymorphy2.MorphAnalyzer()
 if __name__ == '__main__':
     data = {'Часть 1': [], 'Часть 2': []}
     with open('compounds_top10000_AN.txt', 'r') as compounds:
-        with open('/home/willstudent/russian_compounds/compound_lists/text/compounds_top10000_AN_inflect.txt',
+        with open('/home/willstudent/russian_compounds/compound_lists/text/compounds_top10000_AN.txt',
                   'w') as infl:
             for line in compounds:
                 part1 = line.strip().split()[0]
@@ -17,4 +17,4 @@ if __name__ == '__main__':
                 try:
                     infl.write(adj.inflect({'nomn', noun_gen, noun_num}).word + ' ' + part2 + '\r\n')
                 except:
-                    continue
+                    infl.write(part1 + ' ' + part2 + '\r\n')
